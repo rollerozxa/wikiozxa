@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>{{ title }} - Wiki</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{# inline font styling - update from /assets/css/fonts.css #}
+		<style>@font-face{font-family:"Roboto";font-style:normal;font-weight:400;font-display:swap;src:local("Roboto"),url("/assets/fonts/roboto-v29-latin-ext_latin-regular.woff2") format("woff2"),url("/assets/fonts/roboto-v29-latin-ext_latin-regular.woff") format("woff")}@font-face{font-family:"Roboto";font-style:normal;font-weight:700;font-display:swap;src:local("Roboto Bold"),url("/assets/fonts/roboto-v29-latin-ext_latin-700.woff2") format("woff2"),url("/assets/fonts/roboto-v29-latin-ext_latin-700.woff") format("woff")}</style>
+		<link rel="stylesheet" href="/assets/css/darkmode.css?v=24" type="text/css">
+		<script defer src="/assets/base.js"></script>
+		<script defer src="/assets/prism.js"></script>
+
+		{% if noindex %}<meta name="robots" content="noindex,nofollow">{% endif %}
+		<meta property="og:title" content="{{ title }} - principia-web">
+		{% if image %}<meta property="og:image" content="{{ image }}">{% endif %}
+		{% if description %}<meta name="description" content="{{ description|length > 200 ? description|slice(0, 200) ~ '...' : description }}">
+		<meta property="og:description" content="{{ description }}">{% endif %}
+		<meta property="og:site_name" content="principia-web">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="{{ domain }}{{ uri }}">
+		<link rel="canonical" href="{{ domain }}{{ pagename }}">
+	</head>
+	<body>
+		{{ custom_header() | raw }}
+
+		<div class="top">
+			<div class="menu">
+				<a href="/wiki/">Wiki</a>
+			</div>
+			<div class="menu right">
+				{% if log %}
+					{{ userlink(userdata) }}
+				{% else %}
+					<a href="/login">Login</a>
+				{% endif %}
+			</div>
+		</div>
+		<div class="home content{% if wiki %} wiki{% endif %}">
+			{% block content %}{% endblock %}
+		</div>
+		<div class="footer">
+			<br>{{ custom_info() }}
+			Running coolio wiki -
+			{{ profiler_stats() }}
+		</div>
+		{% block custom_footer %}{% endblock %}
+	</body>
+</html>

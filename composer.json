@@ -1,0 +1,14 @@
+{
+	"require": {
+		"twig/twig": "^3.0",
+		"mpratt/relativetime": "^1.5",
+		"erusev/parsedown": "9999999-dev",
+		"rollerozxa/php-diff": "dev-master"
+	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url":  "https://github.com/rollerozxa/php-diff"
+		}
+	]
+}

@@ -1,0 +1,144 @@
+
+// sane styling for wiki pages
+.wiki {
+	img {
+		max-width: 100%;
+	}
+}
+
+.wikilinks {
+	border-top: 1px solid $grid;
+	padding: 10px;
+	margin-top: 1em;
+
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+
+.toc {
+	border: 1px solid #888;
+	background-color: #e8e8e8;
+	min-width: 300px;
+	padding: 10px;
+	display: inline-block;
+
+	.toc_title {
+		text-align: center;
+	}
+
+	ul {
+		margin: 0;
+		padding-left: 20px;
+	}
+}
+
+.infobox {
+	background-color: #e8e8e8;
+	border: 1px solid #888;
+	text-align: center;
+	min-width: 300px;
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-bottom: 25px;
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+
+		.heading {
+			background-color: #f5f5f5;
+			font-size: 12pt;
+			font-weight: bold;
+
+			&.beta:after {
+				color: #ffd700;
+				content: " (BETA)";
+				font-size: 12pt;
+				vertical-align: super;
+			}
+			&.unused:after {
+				color: #029fd3;
+				content: "  Unused";
+				font-size: 12pt;
+				vertical-align: super;
+			}
+		}
+
+		tr {
+			border-bottom: 1px solid #888;
+
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+
+		td, th {
+			padding: 10px;
+		}
+	}
+
+	@media screen and (min-width: 700px) {
+		margin-top: -65px;
+		margin-left: 25px;
+		margin-right: 0;
+		float: right;
+		clear: both;
+	}
+}
+
+.diff {
+	width: 100%;
+	border-collapse: collapse;
+	border-top: 1px solid #444;
+	border-bottom: 1px solid #444;
+
+	tbody th {
+		text-align: right;
+		background: #111;
+		width: 2em;
+		padding: 1px 4px;
+		border-left: 1px solid #444;
+		border-right: 1px solid #444;
+		vertical-align: top;
+	}
+
+	td {
+		padding: 1px 4px;
+		font-family: Consolas, monospace;
+	}
+
+	ins, del {
+		text-decoration: none;
+	}
+
+	.skip {
+		background: #000;
+	}
+
+	.chng-replace .d-left,
+	.chng-delete .d-left {
+		background: #600;
+	}
+
+	.chng-replace .d-right,
+	.chng-insert .d-right {
+		background: #060;
+	}
+
+	.chng-replace ins {
+		background: #0a0;
+	}
+
+	.chng-replace del {
+		background: #a00;
+	}
+}
+
+a.nonexistant {
+	color: #ba0000;
+}
+
+.sizediff-pos { color: #090 }
+.sizediff-neg { color: #a00 }
+.sizediff-net { color: #888 }

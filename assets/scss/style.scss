@@ -1,0 +1,178 @@
+
+$grid: #bbb;
+$link: #00f;
+$link_active: darken($link, 17%);
+$bg: #f0f0f0;
+$bg_box: #eee;
+$bg_box2: #fff;
+
+body {
+	background-color: $bg;
+	font-family: "Roboto", "Arial", sans-serif;
+	font-size: 11.5pt;
+	margin: auto;
+	max-width: 1000px;
+	padding-bottom: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+@media screen and (max-width: 640px) {
+	body {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+
+a {
+	color: $link;
+	text-decoration: none;
+
+	&:hover { text-decoration: underline; }
+	&:active { color: $link_active; }
+}
+
+p {
+	line-height: 1.5;
+}
+
+ul li, ol li {
+	margin-top: 0.7em;
+	margin-bottom: 0.7em;
+}
+
+h1 { font-size: 1.75em; }
+h2 { font-size: 1.50em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1.00em; }
+h5 { font-size: 0.83em; }
+h6 { font-size: 0.67em; }
+
+.banner {
+	padding: 10px;
+	font-weight: bold;
+	margin: 5px;
+
+	&.b-red {
+		background-color: #ae1313;
+		color: white;
+	}
+
+	&.b-green {
+		background-color: #13ae13;
+		color: white;
+	}
+
+	&.userban {
+		margin: 0;
+	}
+}
+
+.top, .footer {
+	background-color: $bg_box;
+	border-bottom: 1px solid $grid;
+	border-top: 1px solid $grid;
+	margin-top: 0px;
+	overflow: hidden;
+	padding: 10px 8px;
+}
+
+.top {
+	padding-top: 10px;
+	border-top: 0 !important;
+}
+
+.footer {
+	text-align: center;
+	line-height: 1.5;
+}
+
+.picon {
+	width: 32px;
+	height: 32px;
+	float: left;
+	margin-right: 7px;
+}
+
+div.menu {
+	display: inline;
+	line-height: 32px;
+	text-align: center;
+	font-weight: bold;
+
+	a {
+		display: inline-block;
+		color: #222;
+		font-size: 1.1em;
+		font-weight: bold;
+		text-decoration: none;
+		padding: 0px 7px;
+		border-radius: 5px;
+
+		&:hover {
+			background-color: $bg_box2;
+		}
+	}
+
+	&.right a, .notifs {
+		float: right;
+		margin-right: 6px;
+	}
+	.notifs {
+		color: #20aa20;
+	}
+
+	img.search {
+		vertical-align: middle;
+		width: 18px;
+		height: 18px;
+	}
+}
+
+.header a {
+	float: right;
+}
+
+.header_message {
+	border-bottom: 1px solid $grid;
+	padding: 15px;
+}
+
+
+
+.user {
+	&, &:hover, &:active {
+		text-decoration: none;
+	}
+
+	.t_user {
+		color: #0000aa;
+		font-weight: bold;
+	}
+}
+
+
+/// Generic classes \\\
+
+.left	{ text-align: left; }
+.center	{ text-align: center; }
+.right	{ text-align: right; }
+
+.clear_right { clear: right; }
+.float-right { float: right; }
+
+.noborder { border: 0; }
+
+.text-for-ants { font-size: 8pt; }
+
+.error {
+	color: red;
+	font-weight: bold;
+}
+
+
+/// Wiki \\\
+@import "_style_wiki";
+
+/// Prism.js styling \\\
+@import "_prism";
