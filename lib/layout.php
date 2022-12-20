@@ -7,7 +7,7 @@
  * @return \Twig\Environment Twig object.
  */
 function twigloader($subfolder = '', $customloader = null, $customenv = null) {
-	global $tplCache, $tplNoCache, $userdata, $notificationCount, $log, $lpp, $invite, $domain, $uri;
+	global $tplCache, $tplNoCache, $userdata, $log, $domain, $uri, $config, $page_slugified;
 
 	$doCache = ($tplNoCache ? false : $tplCache);
 
@@ -31,6 +31,8 @@ function twigloader($subfolder = '', $customloader = null, $customenv = null) {
 	$twig->addGlobal('uri', $uri);
 	$twig->addGlobal('pagename', substr($_SERVER['PHP_SELF'], 0, -4));
 	$twig->addGlobal('wiki', true);
+	$twig->addGlobal('config', $config);
+	$twig->addGlobal('page_slugified', $page_slugified);
 
 	$twig->addExtension(new WikiExtension());
 

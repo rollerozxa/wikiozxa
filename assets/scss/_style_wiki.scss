@@ -34,8 +34,8 @@
 }
 
 .infobox {
-	background-color: #e8e8e8;
-	border: 1px solid #888;
+	background-color: #141414;
+	border: 1px solid $grid;
 	text-align: center;
 	min-width: 300px;
 	margin-left: 40px;
@@ -47,7 +47,7 @@
 		border-collapse: collapse;
 
 		.heading {
-			background-color: #f5f5f5;
+			background-color: #0c0c0c;
 			font-size: 12pt;
 			font-weight: bold;
 
@@ -66,7 +66,7 @@
 		}
 
 		tr {
-			border-bottom: 1px solid #888;
+			border-bottom: 1px solid $grid;
 
 			&:last-child {
 				border-bottom: 0;
@@ -136,9 +136,9 @@
 }
 
 a.nonexistant {
-	color: #ba0000;
+	color: #e63333;
 }
 
-.sizediff-pos { color: #090 }
-.sizediff-neg { color: #a00 }
-.sizediff-net { color: #888 }
+.sizediff-pos { color: #0c0 }
+.sizediff-neg { color: #c00 }
+.sizediff-net { color: #aaa }
