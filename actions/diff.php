@@ -1,4 +1,6 @@
 <?php
+$type = 'diff';
+
 $prev = $_GET['prev'] ?? null;
 $next = $_GET['next'] ?? null;
 

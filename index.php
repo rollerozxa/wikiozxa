@@ -18,10 +18,14 @@ if (isset($_GET['action'])) {
 if (str_starts_with($page, 'Special:')) {
 	$specialpage = 'special/'.strtolower(substr($page, 8)).'.php';
 	if (file_exists($specialpage)) {
+		$type = 'special';
+
 		require($specialpage);
 		die();
 	}
 }
+
+$type = 'read';
 
 if ($revision) {
 	$pagedata = fetch("SELECT p.*, $userfields r.time, r.content FROM wikipages p

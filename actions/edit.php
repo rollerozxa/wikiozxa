@@ -1,4 +1,6 @@
 <?php
+$type = 'edit';
+
 $action = $_POST['action'] ?? null;
 
 $pagedata = fetch("SELECT p.*, r.content FROM wikipages p JOIN wikirevisions r ON p.cur_revision = r.revision AND p.title = r.page WHERE BINARY p.title = ?", [$page]);

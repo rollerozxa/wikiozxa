@@ -45,10 +45,12 @@
 				</ul>
 
 				<ul class="actionlinks">
-					<li class="box"><a class="selected" href="/wiki/{{ page_slugified }}" accesskey="r">Read</a></li>
-					<li class="box"><a href="/wiki/{{ page_slugified }}?action=edit" rel="nofollow" accesskey="e">Edit</a></li>
-					<li class="box"><a href="/wiki/{{ page_slugified }}?action=history" rel="nofollow" accesskey="d">History</a></li>
-					<li><input type="text" name="search" placeholder="Search... (TODO)" disabled></li>
+					{% if type != 'special' %}
+						<li class="box"><a {% if type == "read" %}class="selected"{% endif %} href="/wiki/{{ page_slugified }}" accesskey="r">Read</a></li>
+						<li class="box"><a {% if type == "edit" %}class="selected"{% endif %}href="/wiki/{{ page_slugified }}?action=edit" rel="nofollow" accesskey="e">Edit</a></li>
+						<li class="box"><a {% if type == "history" %}class="selected"{% endif %}href="/wiki/{{ page_slugified }}?action=history" rel="nofollow" accesskey="d">History</a></li>
+					{% endif %}
+					<li><input type="text" name="search" placeholder="Search... (TODO)" disabled style="display:none"></li>
 				</ul>
 			</div>
 

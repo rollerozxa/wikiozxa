@@ -1,7 +1,7 @@
 <?php
 $id = $_GET['id'] ?? null;
 
-$user = fetch("SELECT id, name FROM users WHERE id = ?", [$_GET['id']]);
+$user = fetch("SELECT id, name FROM users WHERE id = ?", [$id]);
 
 if (!$user) error('404', 'Invalid user.');
 

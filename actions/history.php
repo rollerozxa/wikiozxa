@@ -1,4 +1,6 @@
 <?php
+$type = 'history';
+
 $pagedata = fetch("SELECT * FROM wikipages WHERE BINARY title = ?", [$page]);
 
 if (!$pagedata) error('404', 'Invalid page name.');
