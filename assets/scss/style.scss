@@ -105,8 +105,6 @@ h6 { font-size: 0.67em; }
 		flex: 1;
 
 		.header, .footer {
-			text-align: right;
-
 			.actionlinks, .headerlinks {
 				margin: 0;
 				padding: 0;
@@ -136,7 +134,7 @@ h6 { font-size: 0.67em; }
 					border: 1px solid #38c016;
 					border-bottom: 0;
 					width: 60px;
-					height: 29.5px;
+					height: 28px;
 					display: inline-block;
 					padding: 5px 10px;
 					text-align: center;
@@ -150,6 +148,7 @@ h6 { font-size: 0.67em; }
 
 		.header {
 			height: 85px;
+			text-align: right;
 		}
 
 		.content {
@@ -159,7 +158,12 @@ h6 { font-size: 0.67em; }
 		}
 
 		.footer {
-			padding-top: 20px;
+			padding: 20px;
+
+			.stats {
+				float: right;
+				text-align: right;
+			}
 		}
 	}
 }

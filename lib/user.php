@@ -19,7 +19,7 @@ $powerlevels = [
  */
 function userlink($user, $pre = '') {
 	return sprintf(
-		'<a class="user" href="/user/%d"><span class="t_user">%s</span></a>',
+		'<a class="user" href="/wiki/Special:Contributions?id=%d"><span class="t_user">%s</span></a>',
 	$user[$pre.'id'], $user[$pre.'name']);
 }
 

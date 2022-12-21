@@ -30,8 +30,6 @@ if (php_sapi_name() != "cli") {
 // Whether the user is 'log'ged in
 $log = false;
 
-setcookie('token', 'dummytoken', 2147483647);
-
 // Cookie authentication
 if (isset($_COOKIE['token'])) {
 	$id = result("SELECT id FROM users WHERE token = ?", [$_COOKIE['token']]);

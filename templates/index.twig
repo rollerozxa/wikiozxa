@@ -7,6 +7,12 @@
 {% endif %}
 {% set pagename = '/wiki/' ~ pagetitle_slugified %}
 
+{% block footer %}
+	{% if page.content %}
+		This page was last modified on {{ page.time | date('Y-m-d H:m') }} by {{ page.u_name }}
+	{% endif %}
+{% endblock %}
+
 	{% block content %}
 <h1>{{ pagetitle }}</h1>
 
@@ -17,8 +23,6 @@
 	{% endif %}
 
 	{{ page.content | markdown_wiki }}
-
-	<br><br><em>This page was last modified on {{ page.time | date('Y-m-d H:m') }} by {{ page.u_name }}</em>
 {% else %}
 	<p>This page does not exist. Would you like to create it?</p>
 {% endif %}

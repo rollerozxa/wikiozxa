@@ -44,7 +44,7 @@
 			{% endif %}
 		{% endif %}
 	{% else %}
-		<p>Please <a href="/login">log in</a> to make edits to this page.</p>
+		<p>Please <a href="/wiki/Special:Login">log in</a> to make edits to this page.</p>
 	{% endif %}
 </form>
 
@@ -53,9 +53,7 @@
 
 	<h1>Current changes: {{ pagetitle }}</h1>
 	{{ diff | default('None') | raw  }}
-{% endif %}
-
-{% if action == 'Preview' %}
+{% elseif action == 'Preview' %}
 	<hr>
 
 	<h1>Preview: {{ pagetitle }}</h1>
