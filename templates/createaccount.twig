@@ -1,0 +1,22 @@
+{% extends "_layout.twig" %}
+
+{% set title = "Create Account" %}
+{% set noindex = true %}
+{% set pagename = "/wiki/Special:CreateAccount" %}
+
+	{% block content %}
+<h1>Create Account</h1>
+
+{% if error %}
+	<p class="error">Error while trying to register: <br>- {{ error | join('<br>- ') | raw }}</p>
+{% endif %}
+
+<form method="POST">
+	<p>Username<br> <input type="text" name="name" size="25" maxlength="25"></p>
+
+	<p>Password<br> <input type="password" name="pass" size="25" maxlength="100"></p>
+	<p>Password (again)<br> <input type="password" name="pass2" size="25" maxlength="100"></p>
+
+	<p><input type="submit" class="submit" name="action" value="Register"></p>
+</form>
+	{% endblock %}

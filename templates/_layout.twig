@@ -40,8 +40,13 @@
 		<div class="main">
 			<div class="header">
 				<ul class="headerlinks">
-					<li><a href="/wiki/Special:CreateAccount">Create account</a></li>
-					<li><a href="/wiki/Special:Login">Log in</a></li>
+					{% if log %}
+						<li>👤 {{ userlink(userdata) }}</li>
+						<li><a href="/wiki/Special:Login?logout">Log out</a></li>
+					{% else %}
+						<li><a href="/wiki/Special:CreateAccount">Create account</a></li>
+						<li><a href="/wiki/Special:Login">Log in</a></li>
+					{% endif %}
 				</ul>
 
 				<ul class="actionlinks">
