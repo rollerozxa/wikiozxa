@@ -7,6 +7,10 @@
 	{% block content %}
 <h1>Log in</h1>
 
+{% if error %}
+	<p class="error">Error while trying to register: <br>- {{ error | join('<br>- ') | raw }}</p>
+{% endif %}
+
 <form method="POST">
 	<p>Username<br> <input type="text" name="name" size="25" maxlength="25"></p>
 	<p>Password<br> <input type="password" name="pass" size="25" maxlength="100"></p>
