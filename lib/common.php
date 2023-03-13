@@ -41,7 +41,7 @@ if (isset($_COOKIE['token'])) {
 if ($log) {
 	$userdata = fetch("SELECT * FROM users WHERE id = ?", [$id]);
 } else {
-	$userdata['powerlevel'] = 0;
+	$userdata['rank'] = 0;
 }
 
 date_default_timezone_set('Europe/Stockholm');

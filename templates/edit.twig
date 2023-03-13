@@ -13,7 +13,7 @@
 	<p><textarea name="text" placeholder="Page content" cols="100" rows="20" {% if not log %}disabled{% endif %}>{{ page.content }}</textarea></p>
 
 	{% if log %}
-		{% if page.minedit <= userdata.powerlevel %}
+		{% if page.minedit <= userdata.rank %}
 			<p><em>Markdown formatting syntax is allowed.</em></p>
 
 			<p><input type="text" name="description" placeholder="Description (Describe what has been changed)" size="60" value="{{ change_description }}"></p>
@@ -25,10 +25,10 @@
 				{% endif %}
 			</p>
 
-			{% if userdata.powerlevel > 2 %}
-				<p>Minimum powerlevel to edit:
+			{% if userdata.rank > 2 %}
+				<p>Minimum rank to edit:
 					<select name="minedit">
-						{% for plid, plname in powerlevels %}
+						{% for plid, plname in ranks %}
 							<option value="{{ plid }}"{% if plid == page.minedit %} selected{% endif %}>{{ plname }}</option>
 						{% endfor %}
 					</select>
@@ -37,7 +37,7 @@
 
 			<p>By submitting changes you agree to license them under the CC-BY 4.0 license. <a href="/wiki/Copyright">Read more</a></p>
 		{% else %}
-			{% if userdata.powerlevel > 0 %}
+			{% if userdata.rank > 0 %}
 				<p>This page is locked and cannot be edited by unprivileged users.</p>
 			{% else %}
 				<p>You have been banned and cannot edit the wiki.</p>
