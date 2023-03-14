@@ -268,8 +268,8 @@ class ParsedownWiki extends \Parsedown {
 		$toc_data = $this->contentsList();
 		$replace = <<<HTML
 <div class="toc" id="toc">
-	<div class="toc_title"><strong>Contents</strong> [<a href="javascript:toggleVis('toc_content', 'toc_toggle')" id="toc_toggle">Hide</a>]</div>
-	<div class="toc_content" id="toc_content">${toc_data}</div>
+	<div class="toc_title"><strong>Contents</strong> [<a id="toc_toggle">Hide</a>]</div>
+	<div class="toc_content" id="toc_content">$toc_data</div>
 </div>
 HTML;
 

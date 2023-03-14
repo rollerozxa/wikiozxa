@@ -14,3 +14,9 @@ function toggleVis(id, feedback) {
 		y.innerHTML = 'Show';
 	}
 }
+
+if (toc = document.getElementById('toc_toggle')) {
+	toc.addEventListener('click', function (e) {
+		toggleVis('toc_content', 'toc_toggle')
+	});
+}
