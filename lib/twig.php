@@ -6,13 +6,9 @@ class WikiExtension extends \Twig\Extension\AbstractExtension {
 
 		return [
 			new \Twig\TwigFunction('userlink', 'userlink', ['is_safe' => ['html']]),
-			new \Twig\TwigFunction('custom_info', 'customInfo', ['is_safe' => ['html']]),
-			new \Twig\TwigFunction('git_commit', 'gitCommit'),
 			new \Twig\TwigFunction('profiler_stats', function () use ($profiler) {
 				$profiler->getStats();
-			}),
-			new \Twig\TwigFunction('custom_header', 'customHeader'),
-
+			})
 		];
 	}
 	public function getFilters() {

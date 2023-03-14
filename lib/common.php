@@ -9,9 +9,8 @@ $profiler = new Profiler();
 
 require_once('conf/config.php');
 require_once('vendor/autoload.php');
-foreach (glob("lib/*.php") as $file) {
+foreach (glob("lib/*.php") as $file)
 	require_once($file);
-}
 
 $userfields = userfields();
 
@@ -20,11 +19,13 @@ if (php_sapi_name() != "cli") {
 	$ipaddr = $_SERVER['REMOTE_ADDR'];
 	$useragent = $_SERVER['HTTP_USER_AGENT'] ?? null;
 	$uri = $_SERVER['REQUEST_URI'] ?? null;
+	$domain = (isset($_SERVER['HTTPS']) ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'];
 } else {
 	// CLI fallback variables
 	$ipaddr = '127.0.0.1';
 	$useragent = 'PHP/CLI';
 	$uri = '/';
+	$domain = 'localhost';
 }
 
 // Whether the user is 'log'ged in
@@ -38,10 +39,9 @@ if (isset($_COOKIE['token'])) {
 		$log = true;
 }
 
-if ($log) {
+if ($log)
 	$userdata = fetch("SELECT * FROM users WHERE id = ?", [$id]);
-} else {
+else
 	$userdata['rank'] = 0;
-}
 
 date_default_timezone_set('Europe/Stockholm');

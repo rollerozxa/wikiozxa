@@ -9,12 +9,12 @@ $tplNoCache = false; // **DO NOT SET AS TRUE IN PROD - DEV ONLY**
 
 // Array of memcached server(s) for memcache caching. Leave empty to disable memcache caching.
 $memcachedServers = [];
+$memcachedPrefix = '';
 
-// Website domain.
-$domain = 'https://example.org';
+// Customise your wiki
+$config['title'] = "Wiki";
+$config['description'] = "A very cool wiki.";
+$config['logo'] = 'assets/logo.png';
 
-// Stub function to put special information in the footer.
-function customInfo() { }
-
-// Stub function to put special information in the header.
-function customHeader() { }
+// Allow registrations?
+$config['allowregistrations'] = false;
