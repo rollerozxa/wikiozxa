@@ -1,9 +1,10 @@
-$grid: #444;
+$grid: #38c016;
 $link: #ff0;
 $link_active: darken($link, 17%);
 $bg: #0F0F0F;
 $bg_box: #191919;
 $bg_box2: #060606;
+
 
 body {
 	background-color: $bg;
@@ -80,7 +81,7 @@ h6 { font-size: 0.67em; }
 		width: 160px;
 		background: rgba(16, 48, 2, 0.65);
 		margin-right: 15px;
-		border: 2px solid #38c016;
+		border: 2px solid $grid;
 
 		.sidelinks {
 			margin: 0;
@@ -118,7 +119,7 @@ h6 { font-size: 0.67em; }
 				}
 
 				.box {
-					border: 2px solid #38c016;
+					border: 2px solid $grid;
 				}
 			}
 
@@ -131,7 +132,7 @@ h6 { font-size: 0.67em; }
 				}
 
 				.box a {
-					border: 1px solid #38c016;
+					border: 1px solid $grid;
 					border-bottom: 0;
 					width: 60px;
 					height: 28px;
@@ -152,9 +153,9 @@ h6 { font-size: 0.67em; }
 		}
 
 		.content {
-			background: rgba(8, 8, 8, 0.788);
+			background: rgba(8, 8, 8, 0.75);
 			padding: 10px;
-			border: 2px solid #38c016;
+			border: 2px solid $grid;
 		}
 
 		.footer {
@@ -167,6 +168,140 @@ h6 { font-size: 0.67em; }
 		}
 	}
 }
+
+
+// sane styling for wiki pages
+.wiki {
+	img {
+		max-width: 100%;
+	}
+}
+
+
+.thumb {
+	max-width: 640px;
+}
+
+/// Table of contents \\\
+
+.toc {
+	border: 1px solid $grid;
+	background-color: rgba(8, 8, 8, 0.788);
+	min-width: 300px;
+	padding: 10px;
+	display: inline-block;
+
+	.toc_title {
+		text-align: center;
+	}
+
+	ul {
+		margin: 0;
+		padding-left: 20px;
+	}
+}
+
+/// Infobox \\\
+
+.infobox {
+	background: rgba(8, 8, 8, 0.788);
+	border: 2px solid $grid;
+	text-align: center;
+	min-width: 300px;
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-bottom: 25px;
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+
+		.heading {
+			background: rgba(16, 48, 2, 0.65);
+			font-size: 12pt;
+			font-weight: bold;
+		}
+
+		tr {
+			border-bottom: 2px solid $grid;
+
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+
+		td, th {
+			padding: 10px;
+		}
+	}
+
+	@media screen and (min-width: 700px) {
+		margin-top: -65px;
+		margin-left: 25px;
+		margin-right: 0;
+		float: right;
+		clear: both;
+	}
+}
+
+/// Diff styling \\\
+
+.diff {
+	width: 100%;
+	border-collapse: collapse;
+	border-top: 1px solid #444;
+	border-bottom: 1px solid #444;
+
+	tbody th {
+		text-align: right;
+		background: #111;
+		width: 2em;
+		padding: 1px 4px;
+		border-left: 1px solid #444;
+		border-right: 1px solid #444;
+		vertical-align: top;
+	}
+
+	td {
+		padding: 1px 4px;
+		font-family: Consolas, monospace;
+	}
+
+	ins, del {
+		text-decoration: none;
+	}
+
+	.skip {
+		background: #000;
+	}
+
+	.chng-replace .d-left,
+	.chng-delete .d-left {
+		background: #600;
+	}
+
+	.chng-replace .d-right,
+	.chng-insert .d-right {
+		background: #060;
+	}
+
+	.chng-replace ins {
+		background: #0a0;
+	}
+
+	.chng-replace del {
+		background: #a00;
+	}
+}
+
+a.nonexistant {
+	color: #e63333;
+}
+
+.sizediff-pos { color: #0c0 }
+.sizediff-neg { color: #c00 }
+.sizediff-net { color: #aaa }
+
 
 /// Generic classes \\\
 
@@ -185,10 +320,6 @@ h6 { font-size: 0.67em; }
 	color: red;
 	font-weight: bold;
 }
-
-
-/// Wiki \\\
-@import "_style_wiki";
 
 /// Prism.js styling \\\
 @import "_prism";
