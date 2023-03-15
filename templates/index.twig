@@ -1,6 +1,9 @@
 {% extends "_layout.twig" %}
 
-{% set title = pagetitle %}
+{% if pagetitle != 'Main Page' %}
+	{% set title = pagetitle %}
+{% endif %}
+
 {% if revision %}
 	{% set noindex = true %}
 {% endif %}
@@ -13,7 +16,11 @@
 {% endblock %}
 
 	{% block content %}
-<h1>{{ pagetitle }}</h1>
+{% if pagetitle == 'Main Page' %}
+	<h1>{{ config.title }}</h1>
+{% else %}
+	<h1>{{ pagetitle }}</h1>
+{% endif %}
 
 {% if page.content %}
 	{% if revision %}
