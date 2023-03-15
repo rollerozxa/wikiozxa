@@ -44,7 +44,9 @@
 						<li>👤 {{ userlink(userdata) }}</li>
 						<li><a href="/wiki/Special:Login?logout">Log out</a></li>
 					{% else %}
-						<li><a href="/wiki/Special:CreateAccount">Create account</a></li>
+						{% if config.allowregistrations %}
+							<li><a href="/wiki/Special:CreateAccount">Create account</a></li>
+						{% endif %}
 						<li><a href="/wiki/Special:Login">Log in</a></li>
 					{% endif %}
 				</ul>

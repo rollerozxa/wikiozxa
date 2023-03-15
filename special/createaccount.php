@@ -1,5 +1,7 @@
 <?php
 
+if (!$config['allowregistrations']) error('403', 'Registrations have been disabled.');
+
 $error = [];
 
 if (isset($_POST['action'])) {
