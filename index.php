@@ -1,6 +1,8 @@
 <?php
 require('lib/common.php');
 
+if ($uri == '/' && !isCli()) redirect('/wiki/');
+
 if (!isset($_GET['page']) || !$_GET['page']) $_GET['page'] = 'Main_Page';
 
 $page = (isset($_GET['page']) ? str_replace('_', ' ', $_GET['page']) : 'Main Page');
