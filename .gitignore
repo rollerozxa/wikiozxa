@@ -1,32 +1,18 @@
 ## User-generated files
 conf/config.php
-levels/
-packages/
 templates/cache/
-level_archive/
 userpic/
 
 ## SCSS caches
 assets/css/
 assets/scss/.sass-cache
 
-## Featured stuff
-featured/
-
 ## Composer
 vendor/
 composer.lock
 
 ## misc.
-assets/js/jscolor.min.js
-internal/upload_debug.php
 templates/_template.twig
-lol.php
-lua/
 .vscode/
-wiki/
 misc/
-tools/lvlinfo
-tools/lvledit
-tools/progress-get
 adminer/
