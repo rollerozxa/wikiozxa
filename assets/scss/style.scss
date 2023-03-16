@@ -75,9 +75,6 @@ h6 { font-size: 0.67em; }
 
 	.sidebar {
 		padding: 5px;
-	}
-
-	.sidebar {
 		width: 160px;
 		background: rgba(16, 48, 2, 0.65);
 		margin-right: 15px;
@@ -169,17 +166,20 @@ h6 { font-size: 0.67em; }
 	}
 }
 
-
-// sane styling for wiki pages
-.wiki {
-	img {
-		max-width: 100%;
-	}
+@media only screen and (max-width: 640px) {
+	/* 'no mobile' */
+	.container { flex-direction: column-reverse; }
+	.stats { display: none; }
 }
 
 
+// sane styling for wiki pages
+	img {
+		max-width: 100%;
+	}
+
 .thumb {
-	max-width: 640px;
+	width: 640px;
 }
 
 /// Table of contents \\\
